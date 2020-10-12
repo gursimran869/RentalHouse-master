@@ -1,0 +1,26 @@
+﻿@model IEnumerable<RentalHouse.Models.HouseRecord>
+
+@{
+    ViewBag.Title = "HouseDisplay";
+}
+
+<div class="container bg">
+    <div class="row">
+        
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <img src='~/@Html.DisplayFor(modelItem => item.Image_Location)' class="img-thumbnail"/>
+                    <br/>
+                    <h1> @Html.DisplayFor(modelItem => item.Name)</h1>
+                    <hr/>
+                    <h3>    @Html.DisplayFor(modelItem => item.Size)</h3>
+                    <h5 class="btn btn-warning">   @Html.DisplayFor(modelItem => item.Price)</h5>
+                </div>
+            }
+
+        
+
+    </div>
+
+</div>

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<RentalHouse.Models.HouseRecord>
+
+@{
+    ViewBag.Title = "HouseRecord";
+}
+
+
+<div class="container bg">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2>House Record</h2>
+
+            <p>
+                @Html.ActionLink("Add New House Details", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Size)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Image_Location)
+                    </th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Size)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Image_Location)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                            </td>
+                        <td>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+<a href="@Url.Action("right","Login")" class="btn btn-success">Back to Menu</a>
+
+        </div>
+
+    </div>
+
+</div>
